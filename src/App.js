@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import Child1 from './Child1';
 
-function App() {
+const levels = [
+  {
+    level: 'Red',
+  },
+  {
+    level: 'Green',
+  },
+  {
+    level: 'Blue',
+  },
+];
+
+const App = () => {
+  // state
+  const [levelSliderValues, setLevelSliderValues] = useState(
+    levels.reduce((levelSliderMap, level) => {
+      const levelName = level.level;
+
+      levelSliderMap[levelName] = 5;
+      return levelSliderMap;
+    }, {})
+  );
+  console.log(levelSliderValues);
+
+  // retrieve initial slider values, update the targeted level's value
+  function handleInputChange(event, levelName) {
+    const levelSliderValue = Number(event.target.value);
+
+    // retrieve initial slider values, update the targeted level's value
+    setLevelSliderValues({
+      ...levelSliderValues,
+      [levelName]: levelSliderValue,
+    });
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Child1
+        levels={levels}
+        levelSliderValues={levelSliderValues}
+        setLevelSliderValues={setLevelSliderValues}
+        handleInputChange={handleInputChange}
+      />
     </div>
   );
-}
+};
 
 export default App;
