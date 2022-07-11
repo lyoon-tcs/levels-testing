@@ -13,7 +13,7 @@ const levels = [
   },
 ];
 
-const App = () => {
+const Attribute = () => {
   // state
   const [levelSliderValues, setLevelSliderValues] = useState(
     levels.reduce((levelSliderMap, level) => {
@@ -48,4 +48,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Attribute;

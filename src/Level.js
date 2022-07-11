@@ -1,4 +1,4 @@
-const Child2 = ({ name = 'Level name', value = 5, handleInputChange }) => {
+const Level = ({ name = 'Level name', value = 5, handleInputChange }) => {
   return (
     <div className="level" style={{ display: 'flex' }}>
       <div>{name}</div>
@@ -17,4 +17,4 @@ const Child2 = ({ name = 'Level name', value = 5, handleInputChange }) => {
   );
 };
 
-export default Child2;
+export default Level;
