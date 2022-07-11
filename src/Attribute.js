@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Child1 from './Child1';
+import LevelStage from './LevelStage';
 
 const levels = [
   {
@@ -38,7 +38,7 @@ const App = () => {
 
   return (
     <div>
-      <Child1
+      <LevelStage
         levels={levels}
         levelSliderValues={levelSliderValues}
         setLevelSliderValues={setLevelSliderValues}

@@ -1,12 +1,12 @@
-import Child2 from './Child2';
+import Level from './Level';
 
-const Child1 = ({ levels, handleInputChange, levelSliderValues }) => {
+const LevelStage = ({ levels, handleInputChange, levelSliderValues }) => {
   const renderLevels = () => {
     const levelsArray = levels.map((level) => {
       const levelName = level.level;
 
       return (
-        <Child2
+        <Level
           key={level.level}
           name={level.level}
           value={levelSliderValues[levelName]}
@@ -26,4 +26,4 @@ const Child1 = ({ levels, handleInputChange, levelSliderValues }) => {
   );
 };
 
-export default Child1;
+export default LevelStage;
